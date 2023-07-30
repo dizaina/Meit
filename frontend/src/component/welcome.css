@@ -1,0 +1,36 @@
+.jm-banner-img {
+	position: relative;
+  }
+.jm-banner-img .jm-banner-bg-1 {
+	position: absolute;
+	left: 0px;
+	top: 60px;
+	max-width: 95%;
+	animation: jmSpin 20s linear infinite;
+  }
+
+  .jm-banner-bg-1.square{
+    width:85%;
+  }
+.jm-banner-img .jm-banner-img-1 {
+	position: relative;
+}
+.jm-banner-img-2{
+    width:100%;
+}
+
+.borderImgSeek{
+    border-radius:160px;
+}
+
+.MuiButton-contained, .MuiButton-outlined {
+    border-radius: 50px !important;
+}
+@keyframes jmSpin {
+	50% {
+	  transform: rotate(360deg);
+	}
+	100% {
+	  transform: rotate(0deg);
+	}
+  }

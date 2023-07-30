@@ -8,6 +8,9 @@ import {
 import { useHistory } from "react-router-dom";
 
 import isAuth, { userType } from "../lib/isAuth";
+import logo from "../images/AEROMATE-LOGO.jpg"
+import Box from '@mui/material/Box';
+import { white } from '@mui/material/colors';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -31,11 +34,11 @@ const Navbar = (props) => {
   };
 
   return (
-    <AppBar position="fixed">
+    <AppBar color="white" position="fixed">
       <Toolbar>
-        <Typography variant="h6" className={classes.title}>
-          Job Portal
-        </Typography>
+        <div className={classes.title}>
+          <img src={logo} style={{width:'155px'}} ></img>
+        </div>
         {isAuth() ? (
           userType() === "recruiter" ? (
             <>
