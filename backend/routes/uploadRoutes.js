@@ -18,18 +18,15 @@ router.post("/resume", upload.single("file"), (req, res) => {
     });
   } else {
     const filename = `${uuidv4()}${file.detectedFileExtension}`;
-
     pipeline(
       file.stream,
       fs.createWriteStream(`${__dirname}/../public/resume/${filename}`)
-    )
-      .then(() => {
+    ).then(() => {
         res.send({
           message: "File uploaded successfully",
           url: `/host/resume/${filename}`,
         });
-      })
-      .catch((err) => {
+      }).catch((err) => {
         res.status(400).json({
           message: "Error while uploading",
         });

@@ -39,7 +39,7 @@ function Copyright() {
 }
 const defaultTheme = createTheme({
   typography: {
-    fontFamily: ['"Varela Round"', 'Open Sans'].join(',')
+    fontFamily: ['Varela Round', 'Open Sans'].join(',')
    }
  })
 const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
@@ -64,7 +64,7 @@ const Welcome = (props) => {
                 <div className="jm-banner-img">
                   <img className="jm-banner-bg-1" src={jmbanner2}>
                   </img>
-                  <img className="jm-banner-img-1 borderImgSeek"  src={jmbanner}>
+                  <img className="jm-banner-img-1 borderImgSek"  src={jmbanner}>
                   </img>
                 </div>
               </Grid>
@@ -104,7 +104,7 @@ const Welcome = (props) => {
               WHAT WE DO.
               </Typography> 
               <Typography style={{fontFamily:"Varela Round"}} variant="h2" component="h2">
-               Are you a Career Seeker ?
+               Are you a Job Seeker ?
               </Typography>
               <Typography style={{fontFamily:"Varela Round",marginTop:'20px'}} variant="h5" component="h5">
               Unique jobs at startups and tech companies you can't find anywhere

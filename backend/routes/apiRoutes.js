@@ -981,6 +981,27 @@ router.get("/applicants", jwtAuth, (req, res) => {
   }
 });
 
+router.get("/recruitInfo", (req, res) => {
+  if (true) {
+    Recruiter.find({}).then((applications) => {
+        if (applications.length === 0) {
+          res.status(404).json({
+            message: "No applicants found",
+          });
+          return;
+        }
+        res.json(applications);
+      })
+      .catch((err) => {
+        res.status(400).json(err);
+      });
+  } else {
+    res.status(400).json({
+      message: "You are not allowed to access applicants list",
+    });
+  }
+});
+
 // to add or update a rating [todo: test]
 router.put("/rating", jwtAuth, (req, res) => {
   const user = req.user;

@@ -130,6 +130,7 @@ const Login = (props) => {
     resume: "",
     profile: "",
     bio: "",
+    gender:"",
     contactNumber: "",
   });
 
@@ -443,7 +444,7 @@ const Login = (props) => {
           <TextField
             label="Total Experience"
             value={signupDetails.totalExperience}
-            onChange={(event) => handleInput("name", event.target.value)}
+            onChange={(event) => handleInput("totalExperience", event.target.value)}
             className={classes.inputBox}
             error={inputErrorHandler.totalExperience.error}
             helperText={inputErrorHandler.totalExperience.message}
@@ -461,15 +462,15 @@ const Login = (props) => {
           <TextField
             label="Relevant Experience"
             value={signupDetails.relevantExperience}
-            onChange={(event) => handleInput("name", event.target.value)}
+            onChange={(event) => handleInput("relevantExperience", event.target.value)}
             className={classes.inputBox}
             error={inputErrorHandler.relevantExperience.error}
             helperText={inputErrorHandler.relevantExperience.message}
             onBlur={(event) => {
               if (event.target.value === "") {
-                handleInputError("totalExperience", true, "Experience is required");
+                handleInputError("relevantExperience", true, "Experience is required");
               } else {
-                handleInputError("totalExperience", false, "");
+                handleInputError("relevantExperience", false, "");
               }
             }}
             variant="outlined"
@@ -479,7 +480,7 @@ const Login = (props) => {
           <TextField
             label="Current CTC"
             value={signupDetails.currentCTC}
-            onChange={(event) => handleInput("name", event.target.value)}
+            onChange={(event) => handleInput("currentCTC", event.target.value)}
             className={classes.inputBox}
             error={inputErrorHandler.currentCTC.error}
             helperText={inputErrorHandler.currentCTC.message}
@@ -497,7 +498,7 @@ const Login = (props) => {
           <TextField
             label="Expected CTC"
             value={signupDetails.expectedCTC}
-            onChange={(event) => handleInput("name", event.target.value)}
+            onChange={(event) => handleInput("expectedCTC", event.target.value)}
             className={classes.inputBox}
             error={inputErrorHandler.expectedCTC.error}
             helperText={inputErrorHandler.expectedCTC.message}
@@ -515,7 +516,7 @@ const Login = (props) => {
           <TextField
             label="Notice Period"
             value={signupDetails.noticePeriod}
-            onChange={(event) => handleInput("name", event.target.value)}
+            onChange={(event) => handleInput("noticePeriod", event.target.value)}
             className={classes.inputBox}
             error={inputErrorHandler.noticePeriod.error}
             helperText={inputErrorHandler.noticePeriod.message}
@@ -533,7 +534,7 @@ const Login = (props) => {
           <TextField
             label="Current Employer"
             value={signupDetails.currentEmployer}
-            onChange={(event) => handleInput("name", event.target.value)}
+            onChange={(event) => handleInput("currentEmployer", event.target.value)}
             className={classes.inputBox}
             error={inputErrorHandler.currentEmployer.error}
             helperText={inputErrorHandler.currentEmployer.message}
@@ -551,7 +552,7 @@ const Login = (props) => {
           <TextField
             label="Current Location"
             value={signupDetails.currentLocation}
-            onChange={(event) => handleInput("name", event.target.value)}
+            onChange={(event) => handleInput("currentLocation", event.target.value)}
             className={classes.inputBox}
             error={inputErrorHandler.currentLocation.error}
             helperText={inputErrorHandler.currentLocation.message}
@@ -573,7 +574,14 @@ const Login = (props) => {
             className={classes.inputBox}
             value={signupDetails.gender}
             onChange={(event) => {
-              handleInput("type", event.target.value);
+              handleInput("gender", event.target.value);
+            }}
+            onBlur={(event) => {
+              if (event.target.value === "") {
+                handleInputError("gender", true, "Gender is required");
+              } else {
+                handleInputError("gender", false, "");
+              }
             }}
           >
             <MenuItem value="male">Male</MenuItem>

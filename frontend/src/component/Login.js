@@ -9,6 +9,8 @@ import {
 } from "@material-ui/core";
 import axios from "axios";
 import { Redirect } from "react-router-dom";
+import imgSrc from '../images/illustrate1.png';
+import './login.css';
 
 import PasswordInput from "../lib/PasswordInput";
 import EmailInput from "../lib/EmailInput";
@@ -106,8 +108,14 @@ const Login = (props) => {
   return loggedin ? (
     <Redirect to="/" />
   ) : (
-    <Paper elevation={3} className={classes.body}>
-      <Grid container direction="column" spacing={4} alignItems="center">
+    <Grid container xs={12} spacing={3}>
+    <Grid item xs={5}>
+        
+          <img className="imageLogin" src={imgSrc}></img>
+        
+    </Grid>
+    <Grid item xs={6}>
+    <Grid container direction="column" spacing={4} alignItems="center">
         <Grid item>
           <Typography variant="h3" component="h2">
             Login
@@ -142,7 +150,11 @@ const Login = (props) => {
           </Button>
         </Grid>
       </Grid>
-    </Paper>
+    </Grid>
+</Grid>
+    
+  
+  
   );
 };
 

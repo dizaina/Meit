@@ -11,6 +11,7 @@ import Home from "./component/Home";
 import Applications from "./component/Applications";
 import Profile from "./component/Profile";
 import CreateJobs from "./component/recruiter/CreateJobs";
+import JobInfo from "./component/JobInfo";
 import MyJobs from "./component/recruiter/MyJobs";
 import JobApplications from "./component/recruiter/JobApplications";
 import AcceptedApplicants from "./component/recruiter/AcceptedApplicants";
@@ -63,6 +64,9 @@ function App() {
               </Route>
               <Route exact path="/home">
                 <Home />
+              </Route>
+              <Route exact path="/jobinfo">
+                <JobInfo />
               </Route>
               <Route exact path="/applications">
                 <Applications />
